@@ -1,0 +1,317 @@
+/******************************************************
+GENERAL STYLES
+******************************************************/
+::-webkit-scrollbar {
+	display: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Open Sans";
+	font-family: "Lato";
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body, html {
+	height: 100%
+}
+
+.touchonly {
+	display: none;
+}
+html.touch .touchonly {
+	display: block;
+}
+.noselect * {
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+}
+.doselect * {
+	user-select: auto;
+	-webkit-user-select: auto;
+	-khtml-user-select: auto;
+	-moz-user-select: auto;
+	-o-user-select: auto;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+a {
+	color: #0006a9;
+	text-decoration: none;
+}
+
+
+/******************************************************
+SITE HEADER
+******************************************************/
+
+#site-header {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+}
+#site-header .header-filler {
+	color: white;
+	/*background-color: rgba(0, 0, 0, 0.1);*/
+	background-color: transparent;
+	transition-property: color, background-color, box-shadow;
+	transition-duration: 500ms;
+	/*-webkit-transition-property: color, background-color, box-shadow;*/
+	/*-webkit-transition-duration: 500ms;*/
+}
+#site-header .navbar {
+	width: 960px;
+	margin: 0 auto;
+	padding: 20px 0;
+	font-weight: lighter;
+	overflow: hidden;
+}
+#site-header .sticky {
+	color: black;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 0 6px 2px rgba(0,0,0,0.2);
+}
+#site-header .navbar #name {
+	float: left;
+	font-size: 28px;
+	cursor: pointer;
+
+}
+#site-header .navbar #links {
+	float: right;
+	list-style-type: none;
+	display: block;
+}
+#site-header .navbar #links li {
+	float: left;
+	display: block;
+	padding: 8px 10px;
+	margin: 0 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: transparent;
+	transition-property: background-color;
+	transition-duration: 200ms;
+	letter-spacing: 2px;
+	/*-webkit-transition-property: background-color;*/
+	/*-webkit-transition-duration: 200ms;*/
+}
+#site-header .navbar #links li:hover, #site-header .navbar #links .in-view {
+	/*background-color: #8c1515;*/
+	background-color: #bf1d1d;
+	color: white;
+}
+
+
+/******************************************************
+PARALLAX SECTIONS
+******************************************************/
+
+.parallax {
+	/*position: relative;*/
+	overflow: hidden;
+	height: 100vh;
+}
+.parallax .parallax_img {
+	position: relative;
+	height: 200%;
+	top: -100%;
+
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	perspective: 1000;
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	/*background-position: center;*/
+}
+
+#parallax1 .parallax_img {
+	background-image: url(../img/stanford1.jpg);
+}
+
+#parallax2 .parallax_img {
+	background-image: url(../img/stanford2.jpg);
+}
+
+#parallax3 .parallax_img {
+	background-image: url(../img/sanjose.jpg);
+}
+
+
+/******************************************************
+CONTENT SECTIONS
+******************************************************/
+
+.content {
+	width: 960px;
+	padding: 30px 5px;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+	margin: 0;
+	font-weight: normal;
+}
+
+.content h2 {
+	font-size: 44px;
+}
+
+.content h3 {
+	font-size: 28px;
+}
+
+.content h4 {
+	font-size: 20px;
+}
+.content p {
+	font-size: 20px;
+	margin: 0 0 5px;
+}
+.content p strong {
+	font-weight: bold;
+}
+.content .content-heading {
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+	margin: 20px 0;
+	letter-spacing: 6px;
+}
+.content .text {
+	margin-bottom: 20px;
+}
+.content .section-heading {
+	font-size: 28px;
+	margin: 20px 0 10px;
+}
+.content .content-section {
+	margin: 15px 0 10px;
+}
+.content #about {
+	line-height: 1.5em;
+	text-align: center;
+}
+.content .content-section .course_name {
+	font-size: inherit;
+}
+.content #handle {
+	font-size: 16px;
+	color: #4545ba;
+	text-align: center;
+	display: block;
+	/*margin: 0 0 0;*/
+}
+.content .last {
+	margin: 0 0 15px;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.clear {
+	clear: both;
+	visibility: hidden;
+}
+#contact-icons {
+	margin-top: 100px;
+	margin-left: 100px;
+}
+a.icon {
+	color: #bf1d1d;
+	text-align: center;
+	transition-duration: 300ms;
+	transition-property: color;
+}
+#email-icon:hover {
+	color: #333333;
+}
+#linkedin-icon:hover {
+	color: #0077b5;
+}
+#github-icon:hover {
+	color: #762b86;
+}
+#portrait {
+	height: 300px;
+	margin-right: 100px;
+}
+
+/******************************************************
+FOOTER SECTIONS
+******************************************************/
+
+#site-footer {
+	width: 100%;
+	z-index: 1;
+}
+
+#site-footer .footer-filler {
+	background-color: #aaa;
+	text-align: center;
+	color: white;
+}
+
+#site-footer .footer-filler .footer-info {
+	padding: 20px 0;
+	margin: 0 auto;
+}
+
+
+/******************************************************
+WARNING HEADER
+******************************************************/
+
+#warning-header {
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+#warning-header #warning-message {
+	padding: 20px 0;
+	background-color: #FF4D4D;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	margin: 0 auto;
+}

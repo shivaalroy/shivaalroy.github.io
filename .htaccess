@@ -1,0 +1,10 @@
+# 0 ---- This is only to prevent delays in seeing the updated file due to caching ----
+#Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
+
+# 1 ---- Establish a custom 404 File not Found page ----
+ErrorDocument 403 /page_not_found.html
+ErrorDocument 404 /page_not_found.html
+
+# 2 ---- Prevent directory file listing in all of your folders ----
+#IndexIgnore *
+Options -Indexes
