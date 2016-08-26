@@ -1,4 +1,4 @@
-This is the static webpage for SHIFT.
+This is the personal website for Shivaal Roy.
 
 Website at https://shivaalroy.github.io/
 
