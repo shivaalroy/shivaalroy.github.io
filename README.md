@@ -1,4 +1,4 @@
-This is the static webpage for SHIFT. The bootstrap template is Agency from startBootstrap.com.
+This is the static webpage for SHIFT.
 
 Website at https://shivaalroy.github.io/
 
