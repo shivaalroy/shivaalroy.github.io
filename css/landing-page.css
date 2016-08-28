@@ -1,0 +1,218 @@
+/*
+ * Start Bootstrap - Landing Page (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+
+a {
+    cursor: pointer;
+}
+
+.topnav .navbar-brand {
+    color: #000;
+    font-size: 18px;
+}
+
+.topnav .nav {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-padding {
+    margin-top: 50px;
+}
+
+.intro-header {
+    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+    color: #f8f8f8;
+    /*height: 100vh;*/
+    padding-bottom: 50px;
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    text-align: center;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+header .main-header {
+    font-size: 36px;
+    letter-spacing: 2px;
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+.contact-icons {
+}
+
+.contact-icons a.icon {
+    color: #bf1d1d;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 300ms;
+    transition-property: color;
+}
+
+header .email:hover {
+    color: #333333;
+}
+
+header .linkedin:hover {
+    color: #0077b5;
+}
+
+header .github:hover {
+    color: #762b86;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section:nth-of-type(odd) {
+}
+
+section:nth-of-type(even) {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+}
+
+.shift-red {
+    color: #F5634A;
+}
+
+.shift-red:hover {
+    color: #d1280c;
+}
+
+.section-header {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.lead {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 30px 0;
+    background-color: #f8f8f8;
+}
