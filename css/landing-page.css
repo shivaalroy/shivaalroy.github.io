@@ -26,6 +26,11 @@ a:hover {
     text-decoration: none;
 }
 
+a:active,
+a:focus {
+    text-decoration: none;
+}
+
 .topnav .navbar-brand {
     color: #000;
     font-size: 18px;
@@ -145,7 +150,9 @@ section:nth-of-type(even) {
     color: #F5634A;
 }
 
-.shift-red:hover {
+.shift-red:hover,
+.shift-red:active,
+.shift-red:focus {
     color: #d1280c;
 }
 
