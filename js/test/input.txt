@@ -1,0 +1,444 @@
+Delivered-To: shivaal@navtalent.com
+Received: by 2002:a25:2643:0:0:0:0:0 with SMTP id m64-v6csp1011842ybm;
+        Fri, 26 Oct 2018 10:20:40 -0700 (PDT)
+X-Received: by 2002:a24:4f51:: with SMTP id c78-v6mr4305078itb.56.1540574440178;
+        Fri, 26 Oct 2018 10:20:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1540574440; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qIt5OeOydULBRbU2Z3ydpSiW8TYhNHBwU8ekcCycdYyRJAJscGSAKvVrXfdRvHxo5M
+         n9a99QcW9Okztnhl2YtkvL35BPLeDiifJhlgYu6a4bFkh2HPSkd2DiQmhqQ1zWH9psbD
+         rs2/+axUfPDHj7/AbBf/1fTHsYE5RNi4sRlob0iuUKxYMEo2iQvRZ7NE9Iu8jqi8355K
+         kdqwMWw8m8mBacGexcKMiWutJGBzgq5GvsyaJMvnY71NqdIUtm/d2y/ajjSRA26KefLx
+         lg4c4epPnxVO42OHoLmKigh9TF5x2fEZA4jv2QqGvMj0B7ueVlhWEQZSeHGRmWwM2JXY
+         ExSQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:reply-to:mime-version
+         :dkim-signature;
+        bh=JPHcXuaC+Kseh36OQgnvowMFnKX+PmjwEGB61VtmS1o=;
+        b=LD96par0fORnMiDmP3Ph1qA1j+MsMGrF5xw8Wn2zRdQTNZvpXrYv+TjDcTw2Zv1y5h
+         pkKtFHZT7nSr+/tEYIoX1/UBSv6SVE3j5qJXt4SI7US2A+DgsKqsE/kzCBZMoM2itZDb
+         f7dK7fxFE7j3z0vhw5D7HdD/b2UdjMRGEjQuMP9UnnM8mH0v7+XC9TuwyXymbvuAiThT
+         //sd1cMpPoMEg1V4l5NcnLrym4UqWvkIl/xBYE85E4cikbCVs3DxxAf7BU2f1hatipwn
+         ocjt6paTADw9CbWwkYZmuWwdLT2AeNXf7wQQMPKMCD/qUU3PEJBw9AkgazXF/UAorxNF
+         Hjtg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@navtalent-com.20150623.gappssmtp.com header.s=20150623 header.b=qgMLFKp2;
+       spf=pass (google.com: domain of 350ztwwcnb7ikzanssdfsnlsdwfl.ugekzanssdfsnlsdwfl.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=350zTWwcNB7IkZanSSdfSnlSdWfl.UgekZanSSdfSnlSdWfl.Uge@trix.bounces.google.com
+Return-Path: <350zTWwcNB7IkZanSSdfSnlSdWfl.UgekZanSSdfSnlSdWfl.Uge@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id r48-v6sor17188029jaj.4.2018.10.26.10.20.39
+        for <shivaal@navtalent.com>
+        (Google Transport Security);
+        Fri, 26 Oct 2018 10:20:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 350ztwwcnb7ikzanssdfsnlsdwfl.ugekzanssdfsnlsdwfl.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@navtalent-com.20150623.gappssmtp.com header.s=20150623 header.b=qgMLFKp2;
+       spf=pass (google.com: domain of 350ztwwcnb7ikzanssdfsnlsdwfl.ugekzanssdfsnlsdwfl.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=350zTWwcNB7IkZanSSdfSnlSdWfl.UgekZanSSdfSnlSdWfl.Uge@trix.bounces.google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=navtalent-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:reply-to:message-id:date:subject:from:to;
+        bh=JPHcXuaC+Kseh36OQgnvowMFnKX+PmjwEGB61VtmS1o=;
+        b=qgMLFKp2XKRm3HlT0EGrOTklUNJNSdXvkyV+s78B88Ewx7YF5plZMKUdHyewGcK0sv
+         qhN7QaAQrFcxug+ZJUmK6Kr6j6oJDdnIQ8aI3jIm5D6sVKTrlpaQI7yrSO/TzdxoFxRL
+         Ya7oVB3do6vVW/jyMOmGNW0RCTX2AFbtn4i3NZWNc16E/pg0ESwxlyB6meZoNV1EDfrV
+         6RjkrAGaDcufiThyQFF+uhLOWZ97iao5SAQs9kOAI0DppyHKZWxg3JORvmYVgdd2/+F5
+         vHuJnPDWz0tBIdJ37RJ1CpMjALzoeJAU/LeuFLSKfT/EnFlYYLsY1x1nx9PZjmYJ0En4
+         J+JA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:reply-to:message-id:date:subject
+         :from:to;
+        bh=JPHcXuaC+Kseh36OQgnvowMFnKX+PmjwEGB61VtmS1o=;
+        b=G/5xcsAW1Oi1icKKj5ZEWC7ETdernVfSY0yQ6oWT9pj7Tp8AOCnHHsXEnAvoxZDDEn
+         Fnp2x40CGScjuQnFyAuv1+uiGW/974F9ubDsZMB4zGb5eSrl/+lQ6PlIjjESDfxqP6/v
+         L9GrIzhCCCz1M+9eqOZR2vuR13yyY9lhjpb09hb1gL4XZtYrs/DWElsMQ2YAcYYKrbOq
+         1yBr2nSKIAKY8eOC+Zq99IIRDjFwisgQlocQe2WaZKyNiZkPZs0zKFWinMK2iekp/sMr
+         osiozWspshC2dEeWvS/15WPcMhcGOp+a4WHgfEYYIUi0JLm1iFvT+ppHtQGgga2OC9cL
+         xtqw==
+X-Gm-Message-State: AGRZ1gJSCH20UIIUzKrqNNaEi9TXn5gfSzTYk5VUtqTun8AUJbl01BM2 GgiO9T72Bgzl/AFnX+n5hFbEDfadci8uWSiv1qPRkAzRQA==
+X-Google-Smtp-Source: AJdET5e8p86RgpwMchaDYrl1OvFHJN3sDa1uos/lW/DawyT1kbCF3DDalT0of0tWyYECKeKt4sZzPPb6eI5ukAKRvh9O
+MIME-Version: 1.0
+X-Received: by 2002:a02:3503:: with SMTP id k3-v6mr3632392jaa.5.1540574439752; Fri, 26 Oct 2018 10:20:39 -0700 (PDT)
+Reply-To: shivaal@navtalent.com
+X-No-Auto-Attachment: 1
+Message-ID: <0000000000003b6665057924f018@google.com>
+Date: Fri, 26 Oct 2018 17:20:39 +0000
+Subject: We enjoyed working with you, tell us about your experience with Nav Talent
+From: shivaal@navtalent.com
+To: shivaal@navtalent.com
+Content-Type: multipart/alternative; boundary="0000000000003b6654057924f015"
+
+--0000000000003b6654057924f015
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've invited you to fill out the following form:
+We enjoyed working with you, tell us about your experience with Nav Talent
+
+To fill it out, visit:
+https://docs.google.com/forms/d/e/1FAIpQLSeP2-euKvXJUhIC71u3LEu2Bmj0Nh_omoGxSUmpnIl9iA-H5w/viewform?c=0&amp;w=1&amp;usp=mail_form_link
+
+I&#39;ve invited you to fill out a form:
+
+Google Forms: Create and analyze surveys.
+
+--0000000000003b6654057924f015
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(103,58,183);" width=
+=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pad=
+ding-left: 24px"><img alt=3D"Google Forms" height=3D"26px" style=3D"display=
+: inline-block; margin: 0; vertical-align: middle;" width=3D"143px" src=3D"=
+https://www.gstatic.com/docs/forms/google_forms_logo_lockup_white_2x.png"><=
+/td></tr></tbody></table><div style=3D"padding: 24px; background-color:rgb(=
+237,231,246)"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"max-width: 672px; min-width: 154px;" width=3D"100%" ro=
+le=3D"presentation"><tbody><tr><td style=3D"font-size: 13px; line-height: 1=
+8px; color: #424242; font-weight: 700">Having trouble viewing or submitting=
+ this form?</td></tr><tr height=3D"8px"><td></td></tr><tr><td><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><tbody><tr><td><a=
+ href=3D"https://docs.google.com/forms/d/e/1FAIpQLSeP2-euKvXJUhIC71u3LEu2Bm=
+j0Nh_omoGxSUmpnIl9iA-H5w/viewform?c=3D0&amp;w=3D1&amp;usp=3Dmail_form_link"=
+ style=3D"border-radius: 3px; box-sizing: border-box; display: inline-block=
+; font-size: 13px; font-weight: 700; height: 40px; line-height: 40px; paddi=
+ng: 0 24px; text-align: center; text-decoration: none; text-transform: uppe=
+rcase; vertical-align: middle; color: #fff; background-color: rgb(103,58,18=
+3);" target=3D"_blank" rel=3D"noopener">Fill out in Google Forms</a></td></=
+tr></tbody></table></td></tr><tr height=3D"24px"><td></td></tr></tbody></ta=
+ble><div align=3D"center" style=3D"background-color: #fff; border-bottom: 1=
+px solid #e0e0e0; margin: 0 auto; max-width: 624px; min-width: 154px; paddi=
+ng: 0 24px;"><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"background-color: #fff;" width=3D"100%" role=3D"presentation"><tbody=
+><tr height=3D"24px"><td></td></tr><tr><td><span style=3D"display: table-ce=
+ll; vertical-align: top; font-size: 13px; line-height: 18px; color: #424242=
+;" dir=3D"auto">I&#39;ve invited you to fill out a form:</span></td></tr><t=
+r height=3D"20px"><td></tr><tr style=3D"font-size: 20px; line-height: 24px;=
+"><td dir=3D"auto"><a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSeP2=
+-euKvXJUhIC71u3LEu2Bmj0Nh_omoGxSUmpnIl9iA-H5w/viewform?c=3D0&amp;w=3D1&amp;=
+usp=3Dmail_form_link" style=3D"color: rgb(103,58,183); text-decoration: non=
+e; vertical-align: middle; font-weight: 500">We enjoyed working with you, t=
+ell us about your experience with Nav Talent</a><div itemprop=3D"action" it=
+emscope itemtype=3D"http://schema.org/ViewAction"><meta itemprop=3D"url" co=
+ntent=3D"https://docs.google.com/forms/d/e/1FAIpQLSeP2-euKvXJUhIC71u3LEu2Bm=
+j0Nh_omoGxSUmpnIl9iA-H5w/viewform?c=3D0&amp;w=3D1&amp;usp=3Dmail_goto_form"=
+><meta itemprop=3D"name" content=3D"Fill out form"></div></td></tr><tr heig=
+ht=3D"24px"></tr><tr><td><div class=3D"ss-form" style=3D""><form action=3D"=
+https://docs.google.com/forms/u/2/d/e/1FAIpQLSeP2-euKvXJUhIC71u3LEu2Bmj0Nh_=
+omoGxSUmpnIl9iA-H5w/formResponse" method=3D"POST" id=3D"ss-form" target=3D"=
+_self" style=3D""><ol role=3D"list" class=3D"ss-question-list" style=3D"pad=
+ding-left: 0;list-style-type:none;">
+
+<div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_853709018" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Who did you primarily work with throughout the Match=
+making process?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(Required field)" s=
+tyle=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Who did you prim=
+arily work with throughout the Matchmaking process?  " style=3D"list-style:=
+none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"marg=
+in:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Baris" id=3D"group_1196371943_1" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Baris" aria-required=3D"true" style=3D""></sp=
+an>
+<span class=3D"ss-choice-label" style=3D"">Baris</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Brandon" id=3D"group_1196371943_2" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Brandon" aria-required=3D"true" style=3D""><=
+/span>
+<span class=3D"ss-choice-label" style=3D"">Brandon</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Jada" id=3D"group_1196371943_3" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Jada" aria-required=3D"true" style=3D""></spa=
+n>
+<span class=3D"ss-choice-label" style=3D"">Jada</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Pasha" id=3D"group_1196371943_4" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Pasha" aria-required=3D"true" style=3D""></sp=
+an>
+<span class=3D"ss-choice-label" style=3D"">Pasha</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Shannon" id=3D"group_1196371943_5" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Shannon" aria-required=3D"true" style=3D""><=
+/span>
+<span class=3D"ss-choice-label" style=3D"">Shannon</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Shivaal" id=3D"group_1196371943_6" role=3D"radio" clas=
+s=3D"ss-q-radio" aria-label=3D"Shivaal" aria-required=3D"true" style=3D""><=
+/span>
+<span class=3D"ss-choice-label" style=3D"">Shivaal</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1196371943" value=3D"Zabie" id=3D"group_1196371943_7" role=3D"radio" class=
+=3D"ss-q-radio" aria-label=3D"Zabie" aria-required=3D"true" style=3D""></sp=
+an>
+<span class=3D"ss-choice-label" style=3D"">Zabie</span>
+</label></li></ul>
+
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-scale" style=3D"marg=
+in:12px 0;overflow-x:auto;"><div class=3D"ss-form-entry" style=3D"margin-bo=
+ttom:1.5em;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%;=
+">
+<label class=3D"ss-q-item-label" for=3D"entry_1601821502" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">How likely you are to recommend us to one of your e=
+ngineering peers?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(Required field)" s=
+tyle=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<table border=3D"0" cellpadding=3D"5" cellspacing=3D"0" id=3D"entry_8590051=
+51" style=3D""><tr aria-hidden=3D"true" style=3D""><td class=3D"ss-scalenum=
+bers" style=3D"text-align:center;"></td>
+<td class=3D"ss-scalenumbers" style=3D"text-align:center;"><label class=3D"=
+ss-scalenumber" for=3D"group_859005151_1" style=3D"display:block;padding:0.=
+5em 0 .5em;">1</label></td> <td class=3D"ss-scalenumbers" style=3D"text-ali=
+gn:center;"><label class=3D"ss-scalenumber" for=3D"group_859005151_2" style=
+=3D"display:block;padding:0.5em 0 .5em;">2</label></td> <td class=3D"ss-sca=
+lenumbers" style=3D"text-align:center;"><label class=3D"ss-scalenumber" for=
+=3D"group_859005151_3" style=3D"display:block;padding:0.5em 0 .5em;">3</lab=
+el></td> <td class=3D"ss-scalenumbers" style=3D"text-align:center;"><label =
+class=3D"ss-scalenumber" for=3D"group_859005151_4" style=3D"display:block;p=
+adding:0.5em 0 .5em;">4</label></td> <td class=3D"ss-scalenumbers" style=3D=
+"text-align:center;"><label class=3D"ss-scalenumber" for=3D"group_859005151=
+_5" style=3D"display:block;padding:0.5em 0 .5em;">5</label></td> <td class=
+=3D"ss-scalenumbers" style=3D"text-align:center;"><label class=3D"ss-scalen=
+umber" for=3D"group_859005151_6" style=3D"display:block;padding:0.5em 0 .5e=
+m;">6</label></td> <td class=3D"ss-scalenumbers" style=3D"text-align:center=
+;"><label class=3D"ss-scalenumber" for=3D"group_859005151_7" style=3D"displ=
+ay:block;padding:0.5em 0 .5em;">7</label></td> <td class=3D"ss-scalenumbers=
+" style=3D"text-align:center;"><label class=3D"ss-scalenumber" for=3D"group=
+_859005151_8" style=3D"display:block;padding:0.5em 0 .5em;">8</label></td> =
+<td class=3D"ss-scalenumbers" style=3D"text-align:center;"><label class=3D"=
+ss-scalenumber" for=3D"group_859005151_9" style=3D"display:block;padding:0.=
+5em 0 .5em;">9</label></td> <td class=3D"ss-scalenumbers" style=3D"text-ali=
+gn:center;"><label class=3D"ss-scalenumber" for=3D"group_859005151_10" styl=
+e=3D"display:block;padding:0.5em 0 .5em;">10</label></td>
+<td class=3D"ss-scalenumbers" style=3D"text-align:center;"></td></tr>
+<tr role=3D"radiogroup" aria-label=3D"How likely you are to recommend us to=
+ one of your engineering peers?  Select a value from a range of 1,Very Unli=
+kely (this was a waste of my time), to 10,Very Likely (thanks for all your =
+help, these just weren&#39;t the opportunities I was looking for at this ti=
+me in my career),." style=3D""><td class=3D"ss-scalerow ss-leftlabel" style=
+=3D"text-align:right;color:#666;border:1px solid #d3d8d3;border-left:0;bord=
+er-right:0;padding:.5em .25em;padding-left:0;"><div aria-hidden=3D"true" cl=
+ass=3D"aria-todo" style=3D"">Very Unlikely (this was a waste of my time)</d=
+iv></td>
+<td class=3D"ss-scalerow" style=3D"text-align:center;color:#666;border:1px =
+solid #d3d8d3;border-left:0;border-right:0;padding:.5em .25em;"><div class=
+=3D"ss-scalerow-fieldcell" style=3D""><input type=3D"radio" name=3D"entry.8=
+59005151" value=3D"1" id=3D"group_859005151_1" role=3D"radio" class=3D"ss-q=
+-radio" aria-label=3D"1" aria-required=3D"true" style=3D""></div></td> <td =
+class=3D"ss-scalerow" style=3D"text-align:center;color:#666;border:1px soli=
+d #d3d8d3;border-left:0;border-right:0;padding:.5em .25em;"><div class=3D"s=
+s-scalerow-fieldcell" style=3D""><input type=3D"radio" name=3D"entry.859005=
+151" value=3D"2" id=3D"group_859005151_2" role=3D"radio" class=3D"ss-q-radi=
+o" aria-label=3D"2" aria-required=3D"true" style=3D""></div></td> <td class=
+=3D"ss-scalerow" style=3D"text-align:center;color:#666;border:1px solid #d3=
+d8d3;border-left:0;border-right:0;padding:.5em .25em;"><div class=3D"ss-sca=
+lerow-fieldcell" style=3D""><input type=3D"radio" name=3D"entry.859005151" =
+value=3D"3" id=3D"group_859005151_3" role=3D"radio" class=3D"ss-q-radio" ar=
+ia-label=3D"3" aria-required=3D"true" style=3D""></div></td> <td class=3D"s=
+s-scalerow" style=3D"text-align:center;color:#666;border:1px solid #d3d8d3;=
+border-left:0;border-right:0;padding:.5em .25em;"><div class=3D"ss-scalerow=
+-fieldcell" style=3D""><input type=3D"radio" name=3D"entry.859005151" value=
+=3D"4" id=3D"group_859005151_4" role=3D"radio" class=3D"ss-q-radio" aria-la=
+bel=3D"4" aria-required=3D"true" style=3D""></div></td> <td class=3D"ss-sca=
+lerow" style=3D"text-align:center;color:#666;border:1px solid #d3d8d3;borde=
+r-left:0;border-right:0;padding:.5em .25em;"><div class=3D"ss-scalerow-fiel=
+dcell" style=3D""><input type=3D"radio" name=3D"entry.859005151" value=3D"5=
+" id=3D"group_859005151_5" role=3D"radio" class=3D"ss-q-radio" aria-label=
+=3D"5" aria-required=3D"true" style=3D""></div></td> <td class=3D"ss-scaler=
+ow" style=3D"text-align:center;color:#666;border:1px solid #d3d8d3;border-l=
+eft:0;border-right:0;padding:.5em .25em;"><div class=3D"ss-scalerow-fieldce=
+ll" style=3D""><input type=3D"radio" name=3D"entry.859005151" value=3D"6" i=
+d=3D"group_859005151_6" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"6=
+" aria-required=3D"true" style=3D""></div></td> <td class=3D"ss-scalerow" s=
+tyle=3D"text-align:center;color:#666;border:1px solid #d3d8d3;border-left:0=
+;border-right:0;padding:.5em .25em;"><div class=3D"ss-scalerow-fieldcell" s=
+tyle=3D""><input type=3D"radio" name=3D"entry.859005151" value=3D"7" id=3D"=
+group_859005151_7" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"7" ari=
+a-required=3D"true" style=3D""></div></td> <td class=3D"ss-scalerow" style=
+=3D"text-align:center;color:#666;border:1px solid #d3d8d3;border-left:0;bor=
+der-right:0;padding:.5em .25em;"><div class=3D"ss-scalerow-fieldcell" style=
+=3D""><input type=3D"radio" name=3D"entry.859005151" value=3D"8" id=3D"grou=
+p_859005151_8" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"8" aria-re=
+quired=3D"true" style=3D""></div></td> <td class=3D"ss-scalerow" style=3D"t=
+ext-align:center;color:#666;border:1px solid #d3d8d3;border-left:0;border-r=
+ight:0;padding:.5em .25em;"><div class=3D"ss-scalerow-fieldcell" style=3D""=
+><input type=3D"radio" name=3D"entry.859005151" value=3D"9" id=3D"group_859=
+005151_9" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"9" aria-require=
+d=3D"true" style=3D""></div></td> <td class=3D"ss-scalerow" style=3D"text-a=
+lign:center;color:#666;border:1px solid #d3d8d3;border-left:0;border-right:=
+0;padding:.5em .25em;"><div class=3D"ss-scalerow-fieldcell" style=3D""><inp=
+ut type=3D"radio" name=3D"entry.859005151" value=3D"10" id=3D"group_8590051=
+51_10" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"10" aria-required=
+=3D"true" style=3D""></div></td>
+<td class=3D"ss-scalerow ss-rightlabel" aria-hidden=3D"true" style=3D"text-=
+align:left;color:#666;border:1px solid #d3d8d3;border-left:0;border-right:0=
+;padding:.5em .25em;padding-right:0;">Very Likely (thanks for all your help=
+, these just weren&#39;t the opportunities I was looking for at this time i=
+n my career)</td></tr></table>
+</div></div></div> <div class=3D"ss-form-question errorbox-good" role=3D"li=
+stitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-radio" style=3D"margin:12px 0;"><div=
+ class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-align:middle=
+;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_101041192" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Based on your current understanding, which of the fo=
+llowing statements best describes Nav Talent?
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Based on your cu=
+rrent understanding, which of the following statements best describes Nav T=
+alent?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D=
+"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+674840597" value=3D"Nav Talent is a university recruiting company." id=3D"g=
+roup_674840597_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Nav Tal=
+ent is a university recruiting company." style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Nav Talent is a university recru=
+iting company.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+674840597" value=3D"Nav Talent is a recruiting company for start-ups, both =
+for university students and post graduation" id=3D"group_674840597_2" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"Nav Talent is a recruiting co=
+mpany for start-ups, both for university students and post graduation" styl=
+e=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Nav Talent is a recruiting compa=
+ny for start-ups, both for university students and post graduation</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+674840597" value=3D"Nav Talent is a university focused recruiting company a=
+nd a venture capital fund" id=3D"group_674840597_3" role=3D"radio" class=3D=
+"ss-q-radio" aria-label=3D"Nav Talent is a university focused recruiting co=
+mpany and a venture capital fund" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Nav Talent is a university focus=
+ed recruiting company and a venture capital fund</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+674840597" value=3D"Nav Talent is a longterm focused ecosystem that include=
+s start-up recruiting and venture capital." id=3D"group_674840597_4" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"Nav Talent is a longterm focu=
+sed ecosystem that includes start-up recruiting and venture capital." style=
+=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Nav Talent is a longterm focused=
+ ecosystem that includes start-up recruiting and venture capital.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+674840597" value=3D"Currently I only know about the university recruiting a=
+spect, I&#39;m not sure about other initiatives." id=3D"group_674840597_5" =
+role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Currently I only know abo=
+ut the university recruiting aspect, I&#39;m not sure about other initiativ=
+es." style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Currently I only know about the =
+university recruiting aspect, I&#39;m not sure about other initiatives.</sp=
+an>
+</label></li></ul>
+
+</div></div></div>
+<input type=3D"hidden" name=3D"draftResponse" value=3D"[null,null,&quot;-59=
+77180839328651858&quot;]
+" style=3D"">
+<input type=3D"hidden" name=3D"pageHistory" value=3D"0" style=3D"">
+
+<input type=3D"hidden" name=3D"usp" value=3D"mail_form_submit" style=3D"">
+
+<input type=3D"hidden" name=3D"fbzx" value=3D"-5977180839328651858" style=
+=3D"">
+<div class=3D"ss-send-email-receipt" style=3D"margin-bottom: 4px;" dir=3D"l=
+tr"><label for=3D"emailReceipt" style=3D"display:inline;"></label></div>
+<div class=3D"ss-item ss-navigate" style=3D"margin:12px 0;"><table id=3D"na=
+vigation-table" style=3D""><tbody><tr><td class=3D"ss-form-entry goog-inlin=
+e-block" id=3D"navigation-buttons" dir=3D"ltr" style=3D"margin-bottom:1.5em=
+;vertical-align:middle;margin-left:0;margin-top:0;max-width:100%;position:r=
+elative;display:inline-block;">
+<input type=3D"submit" name=3D"submit" value=3D"Submit" id=3D"ss-submit" cl=
+ass=3D"jfk-button jfk-button-action " style=3D"">
+</td>
+</tr></tbody></table></div></ol></form></div>
+<div class=3D"ss-footer" style=3D""><div class=3D"ss-attribution" style=3D"=
+"></div>
+<div class=3D"ss-legal" style=3D""><div class=3D"disclaimer-separator" styl=
+e=3D""></div>
+<div class=3D"disclaimer" dir=3D"ltr" style=3D""><div class=3D"powered-by-l=
+ogo" style=3D"margin-top:2em;"><span class=3D"powered-by-text" style=3D"">P=
+owered by</span>
+<a href=3D"https://www.google.com/forms/about/?utm_source=3Dproduct&amp;utm=
+_medium=3Dforms_logo&amp;utm_campaign=3Dforms" style=3D""><div class=3D"ss-=
+logo-container" style=3D""><img src=3D"https://ssl.gstatic.com/docs/forms/f=
+orms_logo_2_small_dark_2x.png" height=3D"21px" width=3D"108px" alt=3D"Googl=
+e Forms" style=3D""></div></a></div>
+<div class=3D"ss-terms" style=3D"color:#777;font-size:11px;margin-top:1.5em=
+;"><span class=3D"disclaimer-msg" style=3D"">This form was created inside o=
+f Nav Talent.</span>
+<br>
+<a href=3D"https://docs.google.com/forms/u/2/d/e/1FAIpQLSeP2-euKvXJUhIC71u3=
+LEu2Bmj0Nh_omoGxSUmpnIl9iA-H5w/reportabuse?source=3Dhttps://docs.google.com=
+/forms/d/e/1FAIpQLSeP2-euKvXJUhIC71u3LEu2Bmj0Nh_omoGxSUmpnIl9iA-H5w/viewfor=
+m?sid%3D2cb2db5f2c0db3d1%26c%3D0%26w%3D1%26token%3DqkGWsWYBAAA.wJHabM75ivya=
+CsMvHlAcag.bE9E83nGNoZBI9SVfHvHkg" style=3D"">Report Abuse</a>
+-
+<a href=3D"http://www.google.com/accounts/TOS" style=3D"">Terms of Service<=
+/a>
+-
+<a href=3D"http://www.google.com/google-d-s/terms.html" style=3D"">Addition=
+al Terms</a></div></div></div></div>
+</td></tr><tr height=3D"24px"></tr></tbody></table></div><table align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 672px; min-wi=
+dth: 154px;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px=
+"><td></td></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail=
+_form_link" style=3D"color: #424242; font-size: 13px;">Create your own Goog=
+le Form</a></td></tr></tbody></table></div></body></html>
+--0000000000003b6654057924f015--

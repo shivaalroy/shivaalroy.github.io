@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Shivaal Roy">
+
+    <title>Embed Google Form</title>
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body style="margin:0; padding:15px; font-family: 'Lato', Helvetica, sans-serif;">
+    <div class="container">
+        <h1 class="text-center" style="font-size: 24px; font-weight: 400;">Google Form Email Embedder Tool</h1>
+        <div class="row form-group col-md-offset-2 col-md-8" style="padding-top:20px;">
+            <label for="input">Paste HTML from Google Form  in Gmail</label>
+            <textarea id="input" class="form-control" style="height:200px; resize:none;"></textarea>
+        </div>
+
+        <div class="row form-group col-md-offset-2 col-md-8">
+            <button id="execute_script" class="btn btn-primary">Extract Email-Ready Output</button>
+        </div>
+
+        <div class="row form-group col-md-offset-2 col-md-8">
+            <textarea id="output" class="form-control" style="height:200px; resize:none;"></textarea>
+        </div>
+
+        <div class="row form-group col-md-offset-2 col-md-8">
+            <button class="btn btn-primary" data-clipboard-target="#output">Copy to Clipboard</button>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/clipboard.min.js"></script>
+
+    <script src="js/prepare_google_form.js"></script>
+
+    <script type="text/javascript">
+        new ClipboardJS('.btn');
+        $('#execute_script').mousedown(() => {
+            const input = $('#input').val();
+            const output = extractEmailHtml(input);
+            $('#output').val(output);
+        });
+    </script>
+</body>
+
+</html>
